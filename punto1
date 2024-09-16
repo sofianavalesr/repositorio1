@@ -1,0 +1,74 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        bool exit = false;
+        while (!exit)
+        {
+            Console.WriteLine("Menú:");
+            Console.WriteLine("1. Sumar");
+            Console.WriteLine("2. Restar");
+            Console.WriteLine("3. Multiplicar");
+            Console.WriteLine("4. Salir");
+            Console.Write("Selecciona una opción: ");
+            string choice = Console.ReadLine();
+
+            switch (choice)
+            {
+                case "1":
+                    Sumar();
+                    break;
+                case "2":
+                    Restar();
+                    break;
+                case "3":
+                    Multiplicar();
+                    break;
+                case "4":
+                    exit = true;
+                    break;
+                default:
+                    Console.WriteLine("Opción no válida. Por favor, intenta de nuevo.");
+                    break;
+            }
+        }
+    }
+
+    static void Sumar()
+    {
+        Console.Write("Ingresa el primer número: ");
+        double num1 = Convert.ToDouble(Console.ReadLine());
+
+        Console.Write("Ingresa el segundo número: ");
+        double num2 = Convert.ToDouble(Console.ReadLine());
+
+        double resultado = num1 + num2;
+        Console.WriteLine("El resultado de la suma es: " + resultado);
+    }
+
+    static void Restar()
+    {
+        Console.Write("Ingresa el primer número: ");
+        double num1 = Convert.ToDouble(Console.ReadLine());
+
+        Console.Write("Ingresa el segundo número: ");
+        double num2 = Convert.ToDouble(Console.ReadLine());
+
+        double resultado = num1 - num2;
+        Console.WriteLine("El resultado de la resta es: " + resultado);
+    }
+
+    static void Multiplicar()
+    {
+        Console.Write("Ingresa el primer número: ");
+        double num1 = Convert.ToDouble(Console.ReadLine());
+
+        Console.Write("Ingresa el segundo número: ");
+        double num2 = Convert.ToDouble(Console.ReadLine());
+
+        double resultado = num1 * num2;
+        Console.WriteLine("El resultado de la multiplicación es: " + resultado);
+    }
+}
