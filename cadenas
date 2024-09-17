@@ -1,0 +1,43 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Ingrese una cadena de números enteros positivos separados por espacios:");
+
+        string input = Console.ReadLine();
+
+        // Validar y procesar la cadena
+        string[] numberStrings = input.Trim().Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+        int[] numbers = new int[numberStrings.Length];
+        bool isValid = true;
+
+        for (int i = 0; i < numberStrings.Length; i++)
+        {
+            if (int.TryParse(numberStrings[i], out int result) && result > 0)
+            {
+                numbers[i] = result;
+            }
+            else
+            {
+                isValid = false;
+                Console.WriteLine($"Valor no válido: '{numberStrings[i]}' en la posición {i}");
+                break;
+            }
+        }
+
+        if (isValid)
+        {
+            Console.WriteLine("Array de números enteros positivos:");
+            foreach (int number in numbers)
+            {
+                Console.WriteLine(number);
+            }
+        }
+        else
+        {
+            Console.WriteLine("La cadena contiene valores no válidos.");
+        }
+    }
+}
