@@ -1,0 +1,69 @@
+using System;
+
+
+
+class Program
+
+{
+
+    static void Main()
+
+    {
+
+        // Leer la frase del usuario
+
+        Console.WriteLine("Ingrese una frase de mínimo 3 palabras:");
+
+        string frase = Console.ReadLine();
+
+
+
+        // Dividir la frase en palabras
+
+        string[] palabras = frase.Split(' ');
+
+
+
+        // Crear un array para almacenar las palabras modificadas
+
+        string[] palabrasModificadas = new string[palabras.Length];
+
+
+
+        for (int i = 0; i < palabras.Length; i++)
+
+        {
+
+            // Convertir cada palabra a minúscula y luego capitalizar la primera letra
+
+            string palabra = palabras[i].ToLower();
+
+            if (palabra.Length > 0)
+
+            {
+
+                palabra = char.ToUpper(palabra[0]) + palabra.Substring(1);
+
+            }
+
+            palabrasModificadas[i] = palabra;
+
+        }
+
+
+
+        // Unir las palabras modificadas en una frase
+
+        string fraseModificada = string.Join(" ", palabrasModificadas);
+
+
+
+        // Mostrar el resultado
+
+        Console.WriteLine("Frase modificada:");
+
+        Console.WriteLine(fraseModificada);
+
+    }
+
+}
